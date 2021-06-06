@@ -1,14 +1,35 @@
 "use strict"
-let circle = document.getElementsByClassName("circle");
-console.log(circle);
+const lights = document.querySelectorAll(".light");
+      const btn = document.querySelector("button");
 
-let activeLight = document.getElementById('colorRed').style.background = 'red';
+      let step = 0;
+      const states = {
+        0: "red",
+        1: "red yellow",
+        2: "yellow",
+        3: "green",
+      };
 
-const redLight = document.getElementById('colorRed');
-const yellowLight = document.getElementById('colorYellow');
-const greenLight = document.getElementById('colorGreen');
-const butn = document.getElementById('btn');
+      function changeColor() {
+        const currentState = states[step];
 
-butn.addEventListener('click', function() {
-  
-})
+        for (const light of lights) {
+          if (currentState.includes(light.dataset.color)) {
+            light.classList.add("active");
+          } else {
+            light.classList.remove("active");
+          }
+        }
+      }
+
+      btn.addEventListener("click", () => {
+        if (step === 3) {
+          step = 0;
+        } else {
+          step += 1;
+        }
+
+        changeColor();
+      });
+
+      changeColor();

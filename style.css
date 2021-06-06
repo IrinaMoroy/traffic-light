@@ -1,28 +1,43 @@
-.wrapper {
+* {
+	box-sizing: border-box;
+}
+
+.traffic-light {
+	margin-bottom: 15px;
 	background:#333;
-	width: 150px;
+	width: 160px;
 	height: 440px;
 	border-radius: 10px;
-	font-size: 70px;
-	text-align:center;
-	padding: 1px 0;
 	border: 6px solid #000;
 	margin: auto;
 }
-.circle {
-	background:#666;
+
+.light {
 	width: 120px;
-	height: 120px;
-	border-radius: 50%;
+    height: 120px;
+    border-radius: 50%;
+	background:#666;
 	margin-left: 15px;
+	margin-right: 15px;
 	margin-top: 20px;
-	line-height: 120px;
-	margin-bottom: 20px;
 }
-.button {
+
+.red.active {
+	background-color: #ff0000;
+  }
+
+  .yellow.active {
+	background-color: #ecf83d;
+  }
+
+  .green.active {
+	background-color: #00ff00
+  }
+
+button {
+	margin-top: 20px;
 	height: 60px;
 	width: 150px;
-	margin: auto;
 	border-radius: 10%;
 	font-size: 20px;
 	font-weight: bolder;
@@ -32,19 +47,7 @@
     transition-duration: 0.4s;
 }
 
-.button:hover {
+button:hover {
     background-color: #4128cf;
     color: white;
-}
-
-.isRed {
-	background-color: #ff0000;
-}
-
-.isYellow {
-	background-color: rgb(207, 231, 69);
-}
-
-.isGreen {
-	background-color: #00ff00;
 }
